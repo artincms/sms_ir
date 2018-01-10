@@ -199,7 +199,7 @@ class Smsir
 		$body   = ['Code'=>$code,'MobileNumber'=>$number];
 		$result = $client->post('http://restfulsms.com/api/VerificationCode',['json'=>$body,'headers'=>['x-sms-ir-secure-token'=>self::getToken()],'connect_timeout'=>30]);
 		if($log) {
-			self::DBlog($result,$code,$number);
+			self::DBlog($result,[$code],[$number]);
 		}
 		return json_decode($result->getBody(),true);
 	}
