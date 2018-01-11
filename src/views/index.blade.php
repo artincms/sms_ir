@@ -8,17 +8,17 @@
     <!-- This page only for admins and no need to index in search engines -->
     <meta name="robots" content="noindex">
 
-    <link rel="stylesheet" href="{{asset('vendor/smsir/css/smsir-bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('vendor/smsir/css/smsir-rtl.min.css')}}">
-    <link rel="stylesheet" href="{{asset('vendor/smsir/css/style.css')}}">
-    <title>{{config('smsir.title')}}</title>
+    <link rel="stylesheet" href="{{asset('vendor/sms_ir/css/sms_ir-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/sms_ir/css/sms_ir-rtl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/sms_ir/css/style.css')}}">
+    <title>{{config('sms_ir.title')}}</title>
 </head>
-<body class="smsir-panel">
+<body class="sms_ir-panel">
     <header>
         <div class="topbar container">
             <div class="row">
                 <div class="top-title text-center">
-                    <h2>{{config('smsir.title')}}</h2><br>
+                    <h2>{{config('sms_ir.title')}}</h2><br>
                     <h5>موجودی: {{$credit}} پیامک </h5>
                 </div>
             </div>

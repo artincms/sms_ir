@@ -1,5 +1,5 @@
 <?php
-namespace artincms\smsir;
+namespace artincms\sms_ir;
 use Illuminate\Support\Facades\Facade;
 
 class SmsirFacade extends Facade

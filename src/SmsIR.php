@@ -1,12 +1,12 @@
 <?php
 
-namespace artincms\smsir;
+namespace artincms\sms_ir;
 use GuzzleHttp\Client;
 
 class SmsIR
 {
 	/**
-	 * This method used for log the messages to the database if db-log set to true (@ smsir.php in config folder).
+	 * This method used for log the messages to the database if db-log set to true (@ sms_ir.php in config folder).
 	 *
 	 * @param $result
 	 * @param $messages
@@ -15,7 +15,7 @@ class SmsIR
 	 */
 	public static function DBlog($result, $messages, $numbers) {
 
-		if(config('smsir.db-log')) {
+		if(config('sms_ir.db-log')) {
 
 			$res = json_decode($result->getBody()->getContents(),true);
 
@@ -25,7 +25,7 @@ class SmsIR
 						'response' => $res['Message'],
 						'message'  => $messages[0],
 						'status'   => $res['IsSuccessful'],
-						'from'     => config('smsir.line-number'),
+						'from'     => config('sms_ir.line-number'),
 						'to'       => $number,
 					]);
 				}
@@ -35,7 +35,7 @@ class SmsIR
 						'response' => $res['Message'],
 						'message'  => $message,
 						'status'   => $res['IsSuccessful'],
-						'from'     => config('smsir.line-number'),
+						'from'     => config('sms_ir.line-number'),
 						'to'       => $number,
 					]);
 				}
@@ -52,7 +52,7 @@ class SmsIR
 	public static function getToken()
 	{
 		$client     = new Client();
-		$body       = ['UserApiKey'=>config('smsir.api-key'),'SecretKey'=>config('smsir.secret-key'),'System'=>'laravel_v_1_4'];
+		$body       = ['UserApiKey'=>config('sms_ir.api-key'),'SecretKey'=>config('sms_ir.secret-key'),'System'=>'laravel_v_1_4'];
 		$result     = $client->post('http://restfulsms.com/api/Token',['json'=>$body,'connect_timeout'=>30]);
 		return json_decode($result->getBody(),true)['TokenKey'];
 	}
@@ -96,9 +96,9 @@ class SmsIR
 		$messages = (array)$messages;
 		$numbers = (array)$numbers;
 		if($sendDateTime === null) {
-			$body   = ['Messages'=>$messages,'MobileNumbers'=>$numbers,'LineNumber'=>config('smsir.line-number')];
+			$body   = ['Messages'=>$messages,'MobileNumbers'=>$numbers,'LineNumber'=>config('sms_ir.line-number')];
 		} else {
-			$body   = ['Messages'=>$messages,'MobileNumbers'=>$numbers,'LineNumber'=>config('smsir.line-number'),'SendDateTime'=>$sendDateTime];
+			$body   = ['Messages'=>$messages,'MobileNumbers'=>$numbers,'LineNumber'=>config('sms_ir.line-number'),'SendDateTime'=>$sendDateTime];
 		}
 		$result     = $client->post('http://restfulsms.com/api/MessageSend',['json'=>$body,'headers'=>['x-sms-ir-secure-token'=>self::getToken()],'connect_timeout'=>30]);
 
