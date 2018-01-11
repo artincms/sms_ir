@@ -1,6 +1,6 @@
 {
     "name": "artincms/sms_ir",
-	"minimum-stability": "dev",
+	"minimum-stability": "stable",
     "require": {
         "artincms/sms_ir": "dev-master"
     },
