@@ -1,9 +1,9 @@
 <?php
 
-namespace phplusir\smsir;
+namespace artincms\smsir;
 use GuzzleHttp\Client;
 
-class Smsir
+class SmsIR
 {
 	/**
 	 * This method used for log the messages to the database if db-log set to true (@ smsir.php in config folder).

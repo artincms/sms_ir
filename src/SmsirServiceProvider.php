@@ -1,6 +1,6 @@
 <?php
 
-namespace phplusir\smsir;
+namespace artincms\smsir;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -52,9 +52,9 @@ class SmsirServiceProvider extends ServiceProvider
 		    __DIR__.'/config/smsir.php', 'smsir'
 	    );
 
-		// bind the Smsir Facade
-	    $this->app->bind('Smsir', function () {
-		    return new Smsir;
+		// bind the SmsIR Facade
+	    $this->app->bind('SmsIR', function () {
+		    return new SmsIR;
 	    });
     }
 }

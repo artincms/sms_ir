@@ -1,6 +1,6 @@
 <?php
 
-namespace phplusir\smsir;
+namespace artincms\smsir;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace phplusir\smsir\Controllers;
+namespace artincms\smsir\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Route;
-use phplusir\smsir\Smsir;
-use phplusir\smsir\SmsirLogs;
+use artincms\smsir\SmsIR;
+use artincms\smsir\SmsirLogs;
 
 
 class SmsirController extends Controller
@@ -12,7 +12,7 @@ class SmsirController extends Controller
 
 	// the main index page for administrators
 	public function index() {
-		$credit = Smsir::credit();
+		$credit = SmsIR::credit();
 		$smsir_logs = SmsirLogs::orderBy('id','DESC')->paginate(config('smsir.in-page'));
 		return view('smsir::index',compact('credit','smsir_logs'));
 	}

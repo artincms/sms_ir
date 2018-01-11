@@ -1,9 +1,9 @@
 {
     "name": "artincms/sms_ir",
-	"minimum-stability": "stable",
+	/*"minimum-stability": "stable",
     "require": {
         "artincms/sms_ir": "dev-master"
-    },
+    },*/
     "description": "Official Sms.ir Laravel Package",
     "keywords": ["laravel", "sms", "پیامک", "اس ام اس", "sendsms", "notifacation", "sms.ir","artincms"],
     "license": "MIT",
