@@ -28,7 +28,7 @@ class SmsIR
 						'from'     => config('sms_ir.line-number'),
 						'to'       => $number,
                         'type'     => $type,
-                        'sent_by'  => auth()->id
+                        'sent_by'  => auth()->id()
 					]);
 				}
 			} else {
@@ -40,7 +40,7 @@ class SmsIR
 						'from'     => config('sms_ir.line-number'),
 						'to'       => $number,
                         'type'     => $type,
-                        'sent_by'  => auth()->id
+                        'sent_by'  => auth()->id()
 					]);
 				}
 			}
