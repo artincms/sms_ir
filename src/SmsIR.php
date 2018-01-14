@@ -13,7 +13,7 @@ class SmsIR
 	 * @param $numbers
 	 * @internal param bool $addToCustomerClub | set to true if you want to log another message instead main message
 	 */
-	public static function DBlog($result, $messages, $numbers) {
+	public static function DBlog($result, $messages, $numbers, $type=2) {
 
 		if(config('sms_ir.db-log')) {
 
@@ -27,6 +27,8 @@ class SmsIR
 						'status'   => $res['IsSuccessful'],
 						'from'     => config('sms_ir.line-number'),
 						'to'       => $number,
+                        'type'     => $type,
+                        'sent_by'  => auth()->id
 					]);
 				}
 			} else {
@@ -37,6 +39,8 @@ class SmsIR
 						'status'   => $res['IsSuccessful'],
 						'from'     => config('sms_ir.line-number'),
 						'to'       => $number,
+                        'type'     => $type,
+                        'sent_by'  => auth()->id
 					]);
 				}
 			}
@@ -199,7 +203,7 @@ class SmsIR
 		$body   = ['Code'=>$code,'MobileNumber'=>$number];
 		$result = $client->post('http://restfulsms.com/api/VerificationCode',['json'=>$body,'headers'=>['x-sms-ir-secure-token'=>self::getToken()],'connect_timeout'=>30]);
 		if($log) {
-			self::DBlog($result,[$code],[$number]);
+			self::DBlog($result,[$code],[$number],1);
 		}
 		return json_decode($result->getBody(),true);
 	}
