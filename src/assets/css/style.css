@@ -33,7 +33,7 @@ body,h1,h2,h3,h4,h5,h6 {
     background: white url("../img/topbar-header.jpg") no-repeat center;
     background-size: cover;
     height: 200px;
-    padding-top: 50px;
+    padding-top: 10px;
     color: whitesmoke;
 }
 table td,table th {
