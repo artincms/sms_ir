@@ -21,7 +21,7 @@ class CreateSmsirLogTable extends Migration
 			$table->boolean('status')->nullable();
 			$table->string('response',500)->nullable();
             $table->enum('type',['1','2'])->default('2');
-            $table->integer('sent_by')->default(0);
+            $table->integer('sent_by')->nullable()->default(0);
 			$table->timestamps();
 		});
 	}
