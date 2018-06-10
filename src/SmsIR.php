@@ -44,7 +44,7 @@ class SmsIR
 					]);
 				}
 			}
-			return var_dump($res);
+			return $res;
 		}
 	}
 
