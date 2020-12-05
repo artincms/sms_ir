@@ -15,8 +15,6 @@
         }
     },
     "require": {
-        "guzzlehttp/guzzle": "^7.0",
-        "zendframework/zend-diactoros" : "1.4.*",
-        "symfony/psr-http-message-bridge" : "1.0.*"
+        "guzzlehttp/guzzle": "^7.0"
     }
 }
